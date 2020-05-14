@@ -1,4 +1,4 @@
-package guru.springframework.spring5webapp.domain;
+package guru.springframework.spring5webapp.domain.shop;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -13,6 +13,13 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id ;
     private String name;
+
+    public Author() {
+    }
+
+    public Long getId() {
+        return id;
+    }
 
     @ManyToMany(mappedBy = "authors")
     private Set<Book> books = new HashSet<>();
